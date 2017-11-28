@@ -35,3 +35,9 @@ let ghostMe = document.querySelector( '#ghosting' )
 ghostMe.addEventListener( 'mouseover', ( () => {
     ghostMe.style.display = 'none'
 } ) )
+
+let doubleWidth = document.querySelector( '#resize' )
+
+resize.addEventListener( 'click', ( () => {
+    doubleWidth.style.width = `${doubleWidth.scrollWidth * 2}px`
+} ) )
