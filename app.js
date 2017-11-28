@@ -29,3 +29,9 @@ for ( let i = 0; i < listItems.length; i++ ) {
         }
     } ) )
 }
+
+let ghostMe = document.querySelector( '#ghosting' )
+
+ghostMe.addEventListener( 'mouseover', ( () => {
+    ghostMe.style.display = 'none'
+} ) )
