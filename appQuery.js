@@ -30,10 +30,12 @@ $().ready( function () {
         } ) )
     }
 
-    let ghostMe = document.querySelector( '#ghosting' )
+    //let ghostMe = document.querySelector( '#ghosting' )
 
-    ghostMe.addEventListener( 'mouseover', ( () => {
-        ghostMe.style.display = 'none'
+    let ghostMe = $( '#ghosting' )
+
+    ghostMe.on( 'mouseover', ( () => {
+        ghostMe.css( 'display', 'none' )
     } ) )
 
     let doubleWidth = document.querySelector( '#resize' )
