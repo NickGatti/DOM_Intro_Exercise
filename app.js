@@ -38,6 +38,14 @@ ghostMe.addEventListener( 'mouseover', ( () => {
 
 let doubleWidth = document.querySelector( '#resize' )
 
-resize.addEventListener( 'click', ( () => {
+resize.addEventListener( 'mouseenter', ( ( e ) => {
+    e.stopPropagation()
+    let oldWidth = doubleWidth.style.width
+
+    let removeIt = ( () => {
+        doubleWidth.style.width = oldWidth
+        doubleWidth.removeEventListener( 'mouseout', removeIt )
+    } )
     doubleWidth.style.width = `${doubleWidth.scrollWidth * 2}px`
+    resize.addEventListener( 'mouseout', removeIt )
 } ) )
