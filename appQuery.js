@@ -19,8 +19,9 @@ $().ready( function () {
         4: './images/beer.jpeg'
     }
 
+    $( '#essentials' ).css( 'background-color', 'yellow' )
+
     for ( let i = 0; i < listItems.length; i++ ) {
-        listItems[ i ].style.backgroundColor = 'yellow'
         listItems[ i ].addEventListener( 'click', ( ( event ) => {
             listItems[ i ].className = 'selected'
             document.querySelectorAll( 'img' )[ 1 ].src = foodMap[ i ]
@@ -29,8 +30,6 @@ $().ready( function () {
             }
         } ) )
     }
-
-    //let ghostMe = document.querySelector( '#ghosting' )
 
     let ghostMe = $( '#ghosting' )
 
@@ -45,7 +44,7 @@ $().ready( function () {
         let oldWidth = doubleWidth.width()
         let removeIt = ( () => {
             doubleWidth.css( 'width', oldWidth )
-            doubleWidth.removeEventListener( 'mouseout', removeIt )
+            doubleWidth.off( 'mouseout', removeIt )
         } )
         doubleWidth.css( 'width', oldWidth * 2 )
         doubleWidth.on( 'mouseout', removeIt )
