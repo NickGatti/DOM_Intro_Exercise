@@ -38,17 +38,16 @@ $().ready( function () {
         ghostMe.css( 'display', 'none' )
     } ) )
 
-    let doubleWidth = document.querySelector( '#resize' )
+    let doubleWidth = $( '#resize' )
 
-    resize.addEventListener( 'mouseenter', ( ( e ) => {
+    doubleWidth.on( 'mouseenter', ( ( e ) => {
         e.stopPropagation()
-        let oldWidth = doubleWidth.style.width
-
+        let oldWidth = doubleWidth.width()
         let removeIt = ( () => {
-            doubleWidth.style.width = oldWidth
+            doubleWidth.css( 'width', oldWidth )
             doubleWidth.removeEventListener( 'mouseout', removeIt )
         } )
-        doubleWidth.style.width = `${doubleWidth.scrollWidth * 2}px`
-        resize.addEventListener( 'mouseout', removeIt )
+        doubleWidth.css( 'width', oldWidth * 2 )
+        doubleWidth.on( 'mouseout', removeIt )
     } ) )
 } )
