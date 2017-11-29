@@ -5,8 +5,7 @@ $().ready( function () {
 
     greeting.text( 'Hello World!' )
 
-    let newImg = document.createElement( 'img' )
-    newImg.src = 'http://49.media.tumblr.com/tumblr_m6qt1rjPSz1rxjzkho1_500.gif'
+    let newImg = $( '<img src="http://49.media.tumblr.com/tumblr_m6qt1rjPSz1rxjzkho1_500.gif"></img>' )
 
     greeting.append( newImg )
 
