@@ -11,25 +11,13 @@ $().ready( function () {
 
     let listItems = document.querySelectorAll( 'li' )
 
-    let foodMap = {
-        0: './images/milk.jpeg',
-        1: './images/honey.jpeg',
-        2: './images/water.jpeg',
-        3: './images/wine.jpeg',
-        4: './images/beer.jpeg'
-    }
-
     $( '#essentials' ).css( 'background-color', 'yellow' )
 
-    for ( let i = 0; i < listItems.length; i++ ) {
-        listItems[ i ].addEventListener( 'click', ( ( event ) => {
-            listItems[ i ].className = 'selected'
-            document.querySelectorAll( 'img' )[ 1 ].src = foodMap[ i ]
-            for ( let z = 0; z < listItems.length; z++ ) {
-                if ( z !== i ) listItems[ z ].className = ''
-            }
-        } ) )
-    }
+    $( 'li' ).click( function () {
+        $( 'li' ).removeClass( 'selected' )
+        $( this ).addClass( 'selected' )
+        $( 'img:eq(1)' ).attr( 'src', './images/' + $( this ).text() + '.jpeg' )
+    } )
 
     let ghostMe = $( '#ghosting' )
 
