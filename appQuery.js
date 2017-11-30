@@ -37,4 +37,33 @@ $().ready( function () {
         doubleWidth.css( 'width', oldWidth * 2 )
         doubleWidth.on( 'mouseout', removeIt )
     } ) )
+
+    $( '#reset' ).click( function () {
+        $( 'li' ).removeClass( 'selected' )
+        $( 'img:eq(1)' ).attr( 'src', './images/panic.jpeg' )
+    } )
+
+    $( 'html' ).keypress( function ( event ) {
+        if ( !isNaN( event.key ) ) alert( 'I HATE NUMBERZZZ!' )
+    } )
+
+    let konamiCode = [
+      'ArrowUp',
+      'ArrowUp',
+      'ArrowDown',
+      'ArrowDown',
+      'ArrowLeft',
+      'ArrowRight',
+      'ArrowLeft',
+      'ArrowRight',
+      'a',
+      'b',
+      0
+    ]
+
+    $( 'html' ).keydown( function ( event ) {
+        event.key === konamiCode[ konamiCode[ 10 ] ] ? konamiCode[ 10 ]++ : konamiCode[ 10 ] = 0
+        if ( konamiCode[ 10 ] === 10 ) alert( 'YOU ARE AN EVENT HANDLERY GURUUUUUUUUU!' )
+    } )
+
 } )
