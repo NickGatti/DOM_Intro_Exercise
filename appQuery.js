@@ -56,8 +56,8 @@ $().ready( function () {
       'ArrowRight',
       'ArrowLeft',
       'ArrowRight',
-      'a',
       'b',
+      'a',
       0
     ]
 
